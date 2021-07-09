@@ -6,11 +6,14 @@
   tasks:
   - name: Copy scripts in temp
     copy: src=/apps/ansible.d/managed-scripts/yum_check_updates dest=/tmp mode=0777
-    
+
   - name: Execute the Yumscript
-    command: sh /tmp/yum_check_updates > /tmp/os-required-updates.txt
+    command: sh /tmp/yum_check_updates
     register: Yumscript
     ignore_errors: True
-  
-  - name: Remove the scripts and temp files 
-    file: state=absent path=/tmp/yum_check_updates path=/tmp/os-required-updates.txt
+
+  - name: Remove the scripts
+    file:  state=absent path=/tmp/yum_check_updates
+
+  - name: Remove  temp files
+    file:  state=absent path=/tmp/os-required-updates.txt
