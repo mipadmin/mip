@@ -13,7 +13,7 @@
     ignore_errors: True
 
   - name: Removing scripts on managed hosts
-    file:  state=absent path=/tmp/yum_check_updates
+    file:  state=absent path=/tmp/sh-services
 
   - name: Removing  temp logs
     file:  state=absent path=/tmp/shutdown-services.log
