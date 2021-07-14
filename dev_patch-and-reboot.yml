@@ -1,0 +1,22 @@
+---
+- hosts: dev
+  become: yes
+  gather_facts: true
+
+  tasks:
+  - name: Installing Updates (YUM)
+    yum: name="*" state=latest
+  
+  - name: Deploying maintenance scripts 
+    copy: src=/apps/ansible.d/managed-scripts/reboot-if-required dest=/tmp mode=0775
+  
+  - name: Executing reboot if required, else startup MIP services.
+    shell: sh /tmp/reboot-if-required > /tmp/reboot-if-required.log
+    register: rebootifrequired
+    ignore_errors: True
+  
+  - name: Removing scripts on managed hosts
+    file:  state=absent path=/tmp/reboot-if-required
+  
+  - name: Removing  temp logs
+    file:  state=absent path=/tmp/reboot-if-required.log
