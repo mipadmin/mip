@@ -1,0 +1,19 @@
+---
+- hosts: test
+  become: yes
+  gather_facts: true
+
+  tasks:
+  - name: Copy scripts in temp
+    copy: src=/apps/ansible.d/managed-scripts/st-services dest=/tmp mode=0777
+
+  - name: Executing services startup
+    shell: sh /tmp/st-services > /tmp/startup-services.log
+    register: MIPstartup
+    ignore_errors: True
+
+  - name: Removing scripts on managed hosts
+    file:  state=absent path=/tmp/st-services
+
+  - name: Removing  temp logs
+    file:  state=absent path=/tmp/startup-services.log
