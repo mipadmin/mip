@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: true
+
+  tasks:
+  - name: Installing Updates (yum)
+    yum: name="*" state=latest
+
+  - name: Deploying maintenance scripts 
+    command: bash /apps/ansible.d/managed-scripts/reboot-if-required
