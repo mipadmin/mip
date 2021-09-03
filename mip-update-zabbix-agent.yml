@@ -1,5 +1,5 @@
 ---
-- hosts: dev
+- hosts: mip
   become: yes
   gather_facts: true
 
