@@ -7,7 +7,7 @@
   - name: Copy Scripts in temp
     copy: src=/apps/ansible.d/managed-scripts/zabbix-agent-upgrade dest=/tmp mode=0777
 
-  - name: Executing services update
+  - name: Executing services update | install if not avilable
     shell: sh /tmp/zabbix-agent-upgrade > /tmp/zabbix-agent-upgrade.log
     register: UpdateZabbixAgent
     ignore_errors: True
