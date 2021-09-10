@@ -18,7 +18,7 @@
   - name: Removing scripts on managed hosts
     file:  state=absent path=/tmp/zabbix-agent-upgrade
   
-    - name: Removing scripts on managed hosts
+  - name: Removing scripts on managed hosts
     file:  state=absent path=/tmp/zbx-sh
 
   - name: Removing  temp logs
