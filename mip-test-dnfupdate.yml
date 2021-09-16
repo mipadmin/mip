@@ -4,5 +4,5 @@
   gather_facts: true
 
   tasks:
-  - name: Installing Updates (dnf)
+  - name: Applying OS patch updates ( dnf/yum )
     yum: name="*" state=latest
