@@ -8,4 +8,4 @@
     yum: name="*" state=latest
 
   - name: Deploying maintenance scripts | Running patch updates
-    command: bash /apps/ansible.d/managed-scripts/reboot-if-required
+    command: bash /apps/ansible.d/managed-scripts/reboot-if-required-local
