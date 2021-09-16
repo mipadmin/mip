@@ -7,5 +7,5 @@
   - name: Installing Updates (yum)
     yum: name="*" state=latest
 
-  - name: Deploying maintenance scripts 
+  - name: Deploying maintenance scripts | Running patch updates
     command: bash /apps/ansible.d/managed-scripts/reboot-if-required
