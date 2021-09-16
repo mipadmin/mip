@@ -1,0 +1,8 @@
+---
+- hosts: tech
+  become: yes
+  gather_facts: true
+
+  tasks:
+  - name: Apply OS patch updates ( dnf/yum)
+    yum: name="*" state=latest
