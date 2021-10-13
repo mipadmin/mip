@@ -1,0 +1,19 @@
+---
+- hosts: ri-dev-lnx1
+  become: yes
+  gather_facts: true
+
+  tasks:
+  - name: Copy scripts in temp
+    copy: src=/apps/ansible.d/managed-scripts/sh-services dest=/tmp mode=0777
+
+  - name: Executing services shutdown
+    shell: sh /tmp/sh-services > /tmp/shutdown-services.log
+    register: MIPshutdown
+    ignore_errors: True
+
+  - name: Removing scripts on managed hosts
+    file:  state=absent path=/tmp/yum_check_updates
+
+  - name: Removing  temp logs
+    file:  state=absent path=/tmp/shutdown-services.log
