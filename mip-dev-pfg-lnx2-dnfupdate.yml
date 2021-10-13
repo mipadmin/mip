@@ -1,0 +1,8 @@
+---
+- hosts: pfg-lnx2
+  become: yes
+  gather_facts: true
+
+  tasks:
+  - name: Installing Updates (dnf)
+    yum: name="*" state=latest
