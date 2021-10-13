@@ -5,6 +5,10 @@
 
   tasks:
   - name: Reboot initiated by Ansible for kernel updates
-    reboot: 
+    reboot:
+      connect_timeout: 5
+      reboot_timeout: 300
+      pre_reboot_delay: 0
+      post_reboot_delay: 30
       test_command: uptime
 
