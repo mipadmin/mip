@@ -1,5 +1,5 @@
 ---
-- hosts: tech-lnx8
+- hosts: tech
   become: yes
   gather_facts: true
 
