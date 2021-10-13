@@ -6,7 +6,5 @@
   tasks:
   - name: Reboot immediately if there was a change.
     shell: "sleep 5 && reboot"
-      connect_timeout: 20
-      sleep: 5
-      delay: 5
-      timeout: 300
+
+
