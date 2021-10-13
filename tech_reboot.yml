@@ -4,7 +4,7 @@
   gather_facts: true
 
   tasks:
-  - name: Rebooting.
+  - name: Reboot initiated by Ansible for kernel updates
     reboot: 
       test_command: uptime
 
