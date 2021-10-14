@@ -4,5 +4,5 @@
   gather_facts: true
 
   tasks:
-  - name: Reboot initiated by Ansible for kernel updates
+  - name: Startup initiated by Ansible 
     shell: pro-stdef
