@@ -5,4 +5,4 @@
 
   tasks:
   - name: Reboot initiated by Ansible for kernel updates
-    shell: pro-dodef
+    shell: pro-stdef
