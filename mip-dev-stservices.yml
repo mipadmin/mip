@@ -1,0 +1,8 @@
+---
+- hosts: dev
+  become: yes
+  gather_facts: true
+
+  tasks:
+  - name: Reboot initiated by Ansible for kernel updates
+    shell: pro-stdef
