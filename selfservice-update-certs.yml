@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: true
+
+  tasks:
+  - name: update MIP certificate
+    command: bash /apps/ansible.d/selfservice/update-tower-certificate
