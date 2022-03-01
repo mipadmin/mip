@@ -1,5 +1,5 @@
 ---
-- hosts: non-prod
+- hosts: non_prod,prod
   # become: yes  
   gather_facts: true
 
