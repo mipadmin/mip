@@ -1,6 +1,5 @@
 ---
 - hosts: non-prod:prod
-  # become: yes
   gather_facts: true
 
   tasks:
