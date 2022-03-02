@@ -8,4 +8,5 @@
     yum: name="*" state=latest
 
   - name: Reboot if kernel changed | Else restart ansible-tower.service
-    command: bash /apps/ansible.d/managed-scripts/reboot-if-required-local
+    command: bash /apps/ansible.d/managed-scripts/reboot-if-required
+#   command: bash /apps/ansible.d/managed-scripts/reboot-if-required-local # Used 
