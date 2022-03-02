@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: true
+
+  tasks:
+  - name: Apply OS patch updates ( dnf/yum)
+    yum: name="*" state=latest
+
+  - name: Reboot if kernel changed | Else restart ansible-tower.service
+    command: shutdown -r +1 "!!! MIP TechOps IS BUSY WITH SERVER MAINTENANCE !!!"
