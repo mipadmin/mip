@@ -7,5 +7,5 @@
   - name: Apply OS patch updates ( dnf/yum)
     yum: name="*" state=latest
 
-  - name: Reboot if kernel changed | Else restart ansible-tower.service
+  - name: Rebooting the server
     command: shutdown -r +1 "!!! MIP TechOps IS BUSY WITH SERVER MAINTENANCE !!!"
