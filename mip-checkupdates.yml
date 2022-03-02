@@ -7,7 +7,7 @@
   - name: Copy scripts in temp
     copy: src=/apps/ansible.d/managed-scripts/yum_check_updates dest=/tmp mode=0777
 
-  - name: Execute Apply OS patch updates ( dnf/yum) script
+  - name: Execute check OS patch updates ( dnf/yum) script
     shell: sh /tmp/yum_check_updates > /tmp/os-required-updates.txt
     register: Yumscript
     ignore_errors: True
