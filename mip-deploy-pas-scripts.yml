@@ -5,4 +5,4 @@
 
   tasks:
   - name: copy the file
-    copy: src=/apps/ansible.d/mip_scripts/pas/*pas dest=/usr/util mode=755 backup=yes force=yes
+    copy: src=/apps/ansible.d/mip_scripts/pas/*pas dest=/usr/util/*pas mode=755 backup=yes force=yes
