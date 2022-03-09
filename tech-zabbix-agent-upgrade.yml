@@ -1,0 +1,25 @@
+---
+- hosts: tech
+  become: yes
+  gather_facts: true
+
+  tasks:
+  - name: Copy Scripts in temp
+    copy: src=/apps/ansible.d/managed-scripts/zabbix-agent-upgrade dest=/tmp mode=0777
+  
+  - name: Copy Scripts in temp
+    copy: src=/apps/ansible.d/managed-scripts/zbx-sh dest=/tmp mode=0777
+  
+  - name: Executing services update | install if not avilable
+    shell: sh /tmp/zabbix-agent-upgrade > /tmp/zabbix-agent-upgrade.log
+    register: UpdateZabbixAgent
+    ignore_errors: True
+
+  - name: Removing scripts on managed hosts
+    file:  state=absent path=/tmp/zabbix-agent-upgrade
+  
+  - name: Removing scripts on managed hosts
+    file:  state=absent path=/tmp/zbx-sh
+
+  - name: Removing  temp logs
+    file:  state=absent path=/tmp/zabbix-agent-upgrade.log
