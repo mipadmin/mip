@@ -1,0 +1,21 @@
+---
+
+- hosts: dev
+  become: yes
+
+  tasks:
+  - name: copying pasant.zip file
+    copy: src=/apps/ansible.d/mip_scripts/pas/pasant.zip dest=/apps/pas122
+    
+  - name: copying pasant compile 
+    copy: src=/apps/ansible.d/managed-scripts/compile-pasant dest=/tmp
+
+  - name: copying pasant compile 
+    shell: bash /tmp/compile-pasant > /tmp/compile-pasant.log
+    
+  - name: remove temp files
+    shell: rm -f /tmp/compile-pasant.log ; rm -f /tmp/compile-pasant.log
+   
+   
+  
+  
