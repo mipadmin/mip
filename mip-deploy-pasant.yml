@@ -14,11 +14,9 @@
     shell: sh /tmp/compile-pasant > /tmp/compile-pasant.log
     
   - name: remove temp scripts
-    file:  state=absent path=/tmp/compile-pasant /tmp/compile-pasant.log
+    file:  state=absent path=/tmp/compile-pasant path=/tmp/compile-pasant.log
   
-  - name: remove log files
-    file:  state=absent path=/tmp/compile-pasant.log
-   
+ 
    
   
   
