@@ -10,7 +10,7 @@
   - name: copying pasant compile 
     copy: src=/apps/ansible.d/managed-scripts/compile-pasant dest=/tmp mode=755
 
-  - name: copying pasant compile 
+  - name: Executing pasant compile 
     shell: sh /tmp/compile-pasant > /tmp/compile-pasant.log
     
   - name: remove temp scripts
