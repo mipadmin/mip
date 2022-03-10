@@ -14,7 +14,7 @@
     shell: bash /tmp/compile-pasant > /tmp/compile-pasant.log
     
   - name: remove temp files
-    shell: rm -f /tmp/compile-pasant.log ; rm -f /tmp/compile-pasant.log
+    shell: rm -f /tmp/compile-pasant ; rm -f /tmp/compile-pasant.log
    
    
   
