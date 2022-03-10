@@ -13,8 +13,11 @@
   - name: copying pasant compile 
     shell: sh /tmp/compile-pasant > /tmp/compile-pasant.log
     
-  - name: remove temp files
-    shell: rm -f /tmp/compile-pasant ; rm -f /tmp/compile-pasant.log
+  - name: remove temp scripts
+    file:  state=absent path=/tmp/compile-pasant /tmp/compile-pasant.log
+  
+  - name: remove log files
+    file:  state=absent path=/tmp/compile-pasant.log
    
    
   
