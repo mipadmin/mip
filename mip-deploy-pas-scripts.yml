@@ -7,11 +7,18 @@
   - name: copying do
     copy: src=/apps/ansible.d/mip_scripts/pas/pro-dopas dest=/usr/util/ mode=755 backup=yes force=yes
     
-  - name: copying sh
+  - name: copying shpas
     copy: src=/apps/ansible.d/mip_scripts/pas/pro-shpas dest=/usr/util/ mode=755 backup=yes force=yes
 
-  - name: copying st
+  - name: copying stpas
     copy: src=/apps/ansible.d/mip_scripts/pas/pro-stpas dest=/usr/util/ mode=755 backup=yes force=yes
   
-  - name: copying qr
+  - name: copying qrpas
     copy: src=/apps/ansible.d/mip_scripts/pas/pro-qrpas dest=/usr/util/ mode=755 backup=yes force=yes
+
+  - name: copying shoem
+    copy: src=/apps/ansible.d/mip_scripts/pas/pro-shoem dest=/usr/util/ mode=755 backup=yes force=yes
+    
+  - name: copying stoem
+    copy: src=/apps/ansible.d/mip_scripts/pas/pro-shoem dest=/usr/util/ mode=755 backup=yes force=yes
+    
