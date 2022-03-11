@@ -20,5 +20,5 @@
     copy: src=/apps/ansible.d/mip_scripts/pas/pro-shoem dest=/usr/util/ mode=755 backup=yes force=yes
     
   - name: copying stoem
-    copy: src=/apps/ansible.d/mip_scripts/pas/pro-shoem dest=/usr/util/ mode=755 backup=yes force=yes
+    copy: src=/apps/ansible.d/mip_scripts/pas/pro-stoem dest=/usr/util/ mode=755 backup=yes force=yes
     
